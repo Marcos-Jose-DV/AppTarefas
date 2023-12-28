@@ -31,6 +31,9 @@
                             </CheckBox.GestureRecognizers>
                         </CheckBox>
                         <StackLayout Grid.Column="1">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnTapPutTask" CommandParameter="{Binding .}" />
+                            </StackLayout.GestureRecognizers>
                             <Label Text="{Binding Name}" 
                                    FontAttributes="Bold" TextDecorations="{Binding IsCompleted, Converter={StaticResource BoolToTextDecorationStrikeThoughConverter} }"/>
                             <Label Text="{Binding PrevisionDate}" 

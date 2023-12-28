@@ -18,6 +18,21 @@ public partial class EditTaskPage : ContentPage
 
         BindableLayout.SetItemsSource(SubTasks_Steps, _task.SubTasks);
     }
+    public EditTaskPage(TaskModel task)
+    {
+        _repository = new TaskModelRepository();
+        InitializeComponent();
+        _task = task;
+        FillFields();
+        BindableLayout.SetItemsSource(SubTasks_Steps, _task.SubTasks);
+    }
+
+    private void FillFields()
+    {
+        Entry_TaskName.Text = _task.Name;
+        Editor_TaskDescription.Text = _task.Description;
+        DatePicker_TaskDate.Date = (DateTime)_task.PrevisionDate;
+    }
     private async void AddStep(object sender, EventArgs e)
     {
         var stepName = await DisplayPromptAsync("Etapa", "Digite o nome da etapa:", "Adicionar", "Cancelar");
@@ -74,8 +89,15 @@ public partial class EditTaskPage : ContentPage
         _task.Created = DateTime.UtcNow;
         _task.IsCompleted = false;
 
-        _repository.PotsTask(_task);
-
+        if(_task.Id > 0)
+        {
+           _repository.PutTask(_task);
+        }
+        else
+        {
+            _repository.PotsTask(_task);
+        }
+      
         Close();
     }
     private async void Close()

@@ -48,4 +48,11 @@ public partial class HomeTaskPage : ContentPage
         task.IsCompleted = ((CheckBox)sender).IsChecked;
         await _repository.PutTask(task);
     }
+
+  
+    private async void OnTapPutTask(object sender, TappedEventArgs e)
+    {
+        var task = (TaskModel)e.Parameter;
+        await Navigation.PushModalAsync(new EditTaskPage(await _repository.GetTaskById(task.Id)));
+    }
 }
