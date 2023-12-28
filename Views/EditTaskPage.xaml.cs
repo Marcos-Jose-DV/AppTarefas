@@ -18,7 +18,6 @@ public partial class EditTaskPage : ContentPage
 
         BindableLayout.SetItemsSource(SubTasks_Steps, _task.SubTasks);
     }
-
     private async void AddStep(object sender, EventArgs e)
     {
         var stepName = await DisplayPromptAsync("Etapa", "Digite o nome da etapa:", "Adicionar", "Cancelar");
@@ -28,12 +27,10 @@ public partial class EditTaskPage : ContentPage
             _task.SubTasks.Add(new SubTaskModel { Name = stepName, IsCompleted = false });
         }
     }
-
     private void CloseModal(object sender, EventArgs e)
     {
         Close();
     }
-
     private void SaveData(object sender, EventArgs e)
     {
         bool valid = ValidDataFromForm();
@@ -44,14 +41,12 @@ public partial class EditTaskPage : ContentPage
             UpdateListHome();
         }
     }
-
     private void UpdateListHome()
     {
         var navPage = (NavigationPage)App.Current.MainPage;
         var homepage = (HomeTaskPage)navPage.CurrentPage;
         homepage.LoadData();
     }
-
     private bool ValidDataFromForm()
     {
         bool validResult = true;
@@ -71,7 +66,6 @@ public partial class EditTaskPage : ContentPage
 
         return validResult;
     }
-   
     private void SaveInDatabase()
     {
         _task.Name = Entry_TaskName.Text;

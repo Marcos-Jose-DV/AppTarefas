@@ -46,11 +46,16 @@ public class TaskModelRepository : ITaskModelRepository
             await _db.SaveChangesAsync();
         }
     }
-    public async Task DeleteTask(TaskModel model)
+    public async Task DeleteTask(TaskModel task)
     {
-        if (model.Id > 0)
+        if (task.Id > 0)
         {
-            _db.TaskModels.Remove(model);
+            task = await GetTaskById(task.Id);
+            foreach (var subTask in task.SubTasks)
+            {
+                _db.SubModels.Remove(subTask);
+            }
+            _db.TaskModels.Remove(task);
             await _db.SaveChangesAsync();
         }
     }
