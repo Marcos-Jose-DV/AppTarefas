@@ -45,11 +45,15 @@ public partial class HomeTaskPage : ContentPage
 
     private async void CompletedTask(object sender, TappedEventArgs e)
     {
+        CheckBox checkBox = (CheckBox)sender;
         TaskModel task = (TaskModel)e.Parameter;
-        task.IsCompleted = ((CheckBox)sender).IsChecked;
+        if (DeviceInfo.Platform != DevicePlatform.WinUI)
+        {
+            checkBox.IsChecked = !checkBox.IsChecked;
+        }
+        task.IsCompleted = checkBox.IsChecked;
         await _repository.PutTask(task);
     }
-
 
     private async void OnTapPutTask(object sender, TappedEventArgs e)
     {
@@ -62,6 +66,6 @@ public partial class HomeTaskPage : ContentPage
         var word = e.NewTextValue;
 
         var search = _tasks.Where(x => x.Name.ToLower().Contains(word.ToLower())).ToList();
-       CollectionViewTasks.ItemsSource = search;
+        CollectionViewTasks.ItemsSource = search;
     }
 }
