@@ -12,6 +12,8 @@ public partial class EditTaskPage : ContentPage
 		InitializeComponent();
         _repository = new TaskModelRepository();
         _task = new TaskModel();
+
+        BindableLayout.SetItemsSource(SubTasks_Steps, _task.SubTasks);
     }
 
     private async void AddStep(object sender, EventArgs e)
