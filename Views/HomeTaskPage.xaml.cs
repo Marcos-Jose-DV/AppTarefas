@@ -6,6 +6,7 @@ namespace Todo.Views;
 public partial class HomeTaskPage : ContentPage
 {
     private readonly ITaskModelRepository _repository;
+    private IList<TaskModel> _tasks;
 
     public HomeTaskPage()
     {
@@ -15,9 +16,9 @@ public partial class HomeTaskPage : ContentPage
     }
     public async void LoadData()
     {
-        var tasks = await _repository.GetTasks();
-        CollectionViewTasks.ItemsSource = tasks;
-        LabelText.IsVisible = tasks.Count <= 0;
+        _tasks = await _repository.GetTasks();
+        CollectionViewTasks.ItemsSource = _tasks;
+        LabelText.IsVisible = _tasks.Count <= 0;
     }
 
     private async void AddNewTask(object sender, EventArgs e)
@@ -49,10 +50,18 @@ public partial class HomeTaskPage : ContentPage
         await _repository.PutTask(task);
     }
 
-  
+
     private async void OnTapPutTask(object sender, TappedEventArgs e)
     {
         var task = (TaskModel)e.Parameter;
         await Navigation.PushModalAsync(new EditTaskPage(await _repository.GetTaskById(task.Id)));
+    }
+
+    private void OnTextChangedTask(object sender, TextChangedEventArgs e)
+    {
+        var word = e.NewTextValue;
+
+        var search = _tasks.Where(x => x.Name.ToLower().Contains(word.ToLower())).ToList();
+       CollectionViewTasks.ItemsSource = search;
     }
 }

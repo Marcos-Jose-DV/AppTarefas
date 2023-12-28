@@ -16,7 +16,7 @@
             </Border.GestureRecognizers>
             <StackLayout Orientation="Horizontal">
                 <Image Source="find.png" Margin="9,0,0,0" HeightRequest="33" WidthRequest="33"/>
-                <Entry x:Name="Search" Grid.Row="0" Placeholder="Pesquisar..." PlaceholderColor="#A8A8A8" HorizontalOptions="FillAndExpand"/>
+                <Entry x:Name="Search" Grid.Row="0" TextChanged="OnTextChangedTask" Placeholder="Pesquisar..." PlaceholderColor="#A8A8A8" HorizontalOptions="FillAndExpand"/>
             </StackLayout>
         </Border>
 

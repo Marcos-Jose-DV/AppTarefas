@@ -29,13 +29,13 @@
     <AppXManifest Include="D:\Curso C#\Udemy\CursoMaui2023\Todo\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-12-28T18:30:26.154</Modified>
+      <Modified>2023-12-28T18:41:32.433</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Curso C#\Udemy\CursoMaui2023\Todo\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-12-28T18:30:25.893</Modified>
+      <Modified>2023-12-28T18:41:32.132</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Curso C#\Udemy\CursoMaui2023\Todo\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Todo.runtimeconfig.json">
       <PackagePath>Todo.runtimeconfig.json</PackagePath>
@@ -43,11 +43,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Curso C#\Udemy\CursoMaui2023\Todo\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Todo.dll">
       <PackagePath>Todo.dll</PackagePath>
-      <Modified>2023-12-28T18:30:24.896</Modified>
+      <Modified>2023-12-28T18:41:31.039</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Todo.exe</PackagePath>
-      <Modified>2023-12-28T18:30:24.900</Modified>
+      <Modified>2023-12-28T18:41:31.044</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Curso C#\Udemy\CursoMaui2023\Todo\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Todo.deps.json">
       <PackagePath>Todo.deps.json</PackagePath>
