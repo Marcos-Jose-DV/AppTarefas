@@ -29,13 +29,13 @@
     <AppXManifest Include="D:\Curso C#\Udemy\CursoMaui2023\Todo\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-12-27T23:31:28.873</Modified>
+      <Modified>2023-12-28T01:45:57.066</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Curso C#\Udemy\CursoMaui2023\Todo\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-12-27T23:31:28.573</Modified>
+      <Modified>2023-12-28T01:45:56.617</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Curso C#\Udemy\CursoMaui2023\Todo\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Todo.runtimeconfig.json">
       <PackagePath>Todo.runtimeconfig.json</PackagePath>
@@ -43,15 +43,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Curso C#\Udemy\CursoMaui2023\Todo\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Todo.dll">
       <PackagePath>Todo.dll</PackagePath>
-      <Modified>2023-12-27T23:31:27.662</Modified>
+      <Modified>2023-12-28T01:45:53.648</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Todo.exe</PackagePath>
-      <Modified>2023-12-27T23:31:27.664</Modified>
+      <Modified>2023-12-28T01:45:53.709</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Curso C#\Udemy\CursoMaui2023\Todo\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Todo.deps.json">
       <PackagePath>Todo.deps.json</PackagePath>
-      <Modified>2023-12-27T04:25:36.417</Modified>
+      <Modified>2023-12-28T01:45:56.265</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marco\.nuget\packages\microsoft.netcore.app.runtime.win-x64\7.0.14\runtimes\win-x64\lib\net7.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -971,11 +971,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Curso C#\Udemy\CursoMaui2023\AppTask.DataBase\bin\Debug\net7.0\AppTask.DataBase.dll">
       <PackagePath>AppTask.DataBase.dll</PackagePath>
-      <Modified>2023-12-27T23:28:04.500</Modified>
+      <Modified>2023-12-28T01:45:45.268</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Curso C#\Udemy\CursoMaui2023\AppTask.Models\bin\Debug\net7.0\AppTask.Models.dll">
       <PackagePath>AppTask.Models.dll</PackagePath>
-      <Modified>2023-12-27T23:28:04.117</Modified>
+      <Modified>2023-12-28T01:45:44.810</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marco\.nuget\packages\microsoft.maui.controls.ref.win\7.0.101\ref\net7.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>

@@ -1,17 +1,27 @@
 using AppTask.Models;
+using Todo.Repositories;
 
 namespace Todo.Views;
 
 public partial class EditTaskPage : ContentPage
 {
-	public EditTaskPage()
+    private readonly ITaskModelRepository _repository;
+    private readonly TaskModel _task;
+    public EditTaskPage()
 	{
 		InitializeComponent();
-	}
+        _repository = new TaskModelRepository();
+        _task = new TaskModel();
+    }
 
-    private void AddStep(object sender, EventArgs e)
+    private async void AddStep(object sender, EventArgs e)
     {
-        var msg = DisplayPromptAsync("Etapa", "Digite o nome da etapa:","Adicionar", "Cancelar");
+        var stepName = await DisplayPromptAsync("Etapa", "Digite o nome da etapa:","Adicionar", "Cancelar");
+
+        if(!string.IsNullOrWhiteSpace(stepName))
+        {
+            _task.SubTasks.Add(new SubTaskModel { Name = stepName , IsCompleted = false});
+        }
     }
 
     private void CloseModal(object sender, EventArgs e)
@@ -21,6 +31,17 @@ public partial class EditTaskPage : ContentPage
 
     private void SaveData(object sender, EventArgs e)
     {
+        TaskModel task = new TaskModel
+        {
+            Name = Entry_TaskName.Text,
+            Description = Editor_TaskDescription.Text,
+            PrevisionDate = DatePicker_TaskDate.Date,
+            Created = DateTime.Now,
+            IsCompleted = false,
+        };
+
+        WeakEventManager.ReferenceEquals(this, task);
+        _repository.PotsTask(task);
         Close();
     }
 
@@ -38,6 +59,7 @@ public partial class EditTaskPage : ContentPage
 
     private void DeleteTask(object sender, TappedEventArgs e)
     {
-        TaskModel task = new();
+        
     }
+
 }

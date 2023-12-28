@@ -2,39 +2,44 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Todo.Views.EditTaskPage"
-             Title="EditTaskPage">
+             Title="EditTaskPage"
+             xmlns:converters="clr-namespace:Todo.Libraries.Converters">
+    <ContentPage.Resources>
+        <converters:BoolToTextDecorationStrikeThoughConverter x:Key="BoolToTextDecorationStrikeThoughConverter"/>
+    </ContentPage.Resources>
 
-    <Grid>
-        <BoxView HeightRequest="5" 
+    <ScrollView>
+        <Grid>
+            <BoxView HeightRequest="5" 
             Color="{StaticResource Black}"
             VerticalOptions="Start"/>
 
-        <VerticalStackLayout Padding="15" Spacing="10">
+            <VerticalStackLayout Padding="15" Spacing="10">
 
-            <Button Clicked="CloseModal"
+                <Button Clicked="CloseModal"
                     Text="X"
                     HorizontalOptions="End" 
                     BackgroundColor="{StaticResource Black}"     
                     MinimumHeightRequest="31"
                     MinimumWidthRequest="31"
                     Padding="0"/>
-            <Border StrokeShape="RoundRectangle 10">
-                <Entry Placeholder="Tarefa" />
-            </Border>
-            <Border StrokeShape="RoundRectangle 10">
-                <Editor x:Name="DatePicker_TaskDate" Placeholder="Descrição" HeightRequest="150"/>
-            </Border>
+                <Border StrokeShape="RoundRectangle 10">
+                    <Entry x:Name="Entry_TaskName"  Placeholder="Tarefa" />
+                </Border>
+                <Border StrokeShape="RoundRectangle 10">
+                    <Editor x:Name="Editor_TaskDescription" Placeholder="Descrição" HeightRequest="150"/>
+                </Border>
 
-            <Border StrokeShape="RoundRectangle 10">
-                <DatePicker x:Name="DatePicker_TaskDate" HorizontalOptions="FillAndExpand" />
-            </Border>
+                <Border StrokeShape="RoundRectangle 10">
+                    <DatePicker x:Name="DatePicker_TaskDate" HorizontalOptions="FillAndExpand" />
+                </Border>
 
-            <StackLayout  Orientation="Horizontal" HeightRequest="31">
-                <Label Text="Estapas (Subtarefas)" 
-                   TextColor="{StaticResource Black}"
-                   FontAttributes="Bold"
-                   VerticalOptions="Center"/>
-                <Button Clicked="AddStep"
+                <StackLayout  Orientation="Horizontal" HeightRequest="31">
+                    <Label Text="Estapas (Subtarefas)" 
+                           TextColor="{StaticResource Black}"
+                           FontAttributes="Bold"
+                           VerticalOptions="Center"/>
+                    <Button Clicked="AddStep"
                         Text="+"
                         HorizontalOptions="EndAndExpand" 
                         MinimumHeightRequest="31"
@@ -42,27 +47,36 @@
                         Padding="0"
                         Margin="0" 
                         BackgroundColor="{StaticResource Black}"/>
-            </StackLayout>
+                </StackLayout>
 
-            <Grid ColumnDefinitions="30,*,30">
-                <CheckBox/>
-                <Label Grid.Column="1"
-                   Text="Etapa"
-                   VerticalOptions="Center"/>
-                <Image Grid.Column="2" 
-                       Source="trash.png" 
-                       WidthRequest="25">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="DeleteTask" CommandParameter="{Binding .}"/>
-                    </Image.GestureRecognizers>
-                </Image>
-            </Grid>
-        </VerticalStackLayout>
+                <StackLayout x:Name="SubTasks_Steps">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Grid ColumnDefinitions="30,*,30">
+                                <CheckBox IsChecked="{Binding IsCompleted}"/>
+                                <Label Grid.Column="1"
+                                       Text="{Binding Name}"
+                                       TextDecorations="{Binding IsCompleted, Converter={StaticResource BoolToTextDecorationStrikeThoughConverter}}"
+                                       VerticalOptions="Center"/> 
+                                <Image Grid.Column="2" 
+                                       Source="trash.png" 
+                                       WidthRequest="25">            
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="DeleteTask" CommandParameter="{Binding .}"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Grid>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+                
+            </VerticalStackLayout>
 
-        <Button Clicked="SaveData"
+            <Button Clicked="SaveData"
                 Text="Salvar"
                 Margin="15"
                 HorizontalOptions="Center"
                 VerticalOptions="End"/>
-    </Grid>
+        </Grid>
+    </ScrollView>
 </ContentPage>

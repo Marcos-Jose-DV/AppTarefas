@@ -349,3 +349,4 @@ D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-windows10.0.19041.0\win10-
 D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
 D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\ProjectArchitectures.txt
+D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\Todo.sourcelink.json
