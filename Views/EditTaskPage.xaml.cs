@@ -1,5 +1,6 @@
 using AppTask.Models;
 using System.Globalization;
+using System.Text;
 using System.Threading.Tasks;
 using Todo.Repositories;
 
@@ -35,21 +36,50 @@ public partial class EditTaskPage : ContentPage
 
     private void SaveData(object sender, EventArgs e)
     {
-        CreatedDate();
-        ValidDataFromForm(Entry_TaskName.Text, Editor_TaskDescription.Text);
+        bool valid = ValidDataFromForm();
+      
+        if(valid)
+        {
+            CreatedDate();
+            SaveInDatabase();
+        }
+    }
+    private bool ValidDataFromForm()
+    {
+        bool validResult = true;
+        Label_TaskName_Required.IsVisible = false;
+        Label_TaskDescription_Required.IsVisible = false;
 
+        if (string.IsNullOrEmpty(Entry_TaskName.Text) || string.IsNullOrWhiteSpace(Entry_TaskName.Text))
+        {
+            Label_TaskName_Required.IsVisible = true;
+            validResult = false;
+        }
+        if (string.IsNullOrEmpty(Editor_TaskDescription.Text) || string.IsNullOrWhiteSpace(Editor_TaskDescription.Text))
+        {
+            Label_TaskDescription_Required.IsVisible = true;
+            validResult = false;
+        }
+
+        return validResult;
+    }
+
+    private void CreatedDate()
+    {
+        DatePicker_TaskDate.Date = new DateTime(DatePicker_TaskDate.Date.Year, DatePicker_TaskDate.Date.Month, DatePicker_TaskDate.Date.Day, 23, 59, 59);
+    }
+    private void SaveInDatabase()
+    {
         _task.Name = Entry_TaskName.Text;
         _task.Description = Editor_TaskDescription.Text;
         _task.PrevisionDate = DatePicker_TaskDate.Date;
         _task.Created = DateTime.UtcNow;
         _task.IsCompleted = false;
-     
+
         Close();
     }
-    private void CreatedDate()
-    {
-        DatePicker_TaskDate.Date = new DateTime(DatePicker_TaskDate.Date.Year, DatePicker_TaskDate.Date.Month, DatePicker_TaskDate.Date.Day, 23, 59, 59);
-    }
+
+   
 
     private async void Close()
     {
@@ -67,19 +97,5 @@ public partial class EditTaskPage : ContentPage
     {
         var subTask = (SubTaskModel)e.Parameter;
         _task.SubTasks.Remove(subTask);
-    }
-
-    private bool ValidDataFromForm(string name, string description)
-    {
-        if(!string.IsNullOrEmpty(name) || !string.IsNullOrWhiteSpace(name))
-        {
-            return false;
-        }
-        if (!string.IsNullOrEmpty(description) || !string.IsNullOrWhiteSpace(description))
-        {
-            return false;
-        }
-
-        return true;
     }
 }
