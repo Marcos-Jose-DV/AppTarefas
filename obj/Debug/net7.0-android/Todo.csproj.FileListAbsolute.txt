@@ -499,7 +499,7 @@ D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\android\assets\Xam
 D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\android\assets\Xamarin.Kotlin.StdLib.Jdk8.dll
 D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\android\assets\Xamarin.KotlinX.Coroutines.Android.dll
 D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\android\assets\Xamarin.KotlinX.Coroutines.Core.Jvm.dll
-D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\android\typemaps.x86_64.ll
+D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\android\typemaps.arm64-v8a.ll
 D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\AndroidManifest.xml
 D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\android\AndroidManifest.xml
 D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\__environment__.txt
@@ -508,7 +508,7 @@ D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\android\assets\mac
 D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\android\bin\mono.android.jar
 D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\static.flag
 D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\buildid.txt
-D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\android\environment.x86_64.ll
+D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\android\environment.arm64-v8a.ll
 D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\android\src\androidx\activity\ktx\R.java
 D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\android\src\androidx\activity\R.java
 D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\android\src\androidx\annotation\experimental\R.java
@@ -988,12 +988,12 @@ D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\android\src\mono\c
 D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\android\src\mono\MonoPackageManager_Resources.java
 D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\android\bin\packaged_resources
 D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\android\src\com\companyname\todo\R.java
-D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\android\compressed_assemblies.x86_64.ll
-D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\android\typemaps.x86_64.o
-D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\android\environment.x86_64.o
-D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\android\compressed_assemblies.x86_64.o
-D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\android\jni_remap.x86_64.o
-D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\app_shared_libraries\x86_64\libxamarin-app.so
+D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\android\compressed_assemblies.arm64-v8a.ll
+D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\android\typemaps.arm64-v8a.o
+D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\android\environment.arm64-v8a.o
+D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\android\compressed_assemblies.arm64-v8a.o
+D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\android\jni_remap.arm64-v8a.o
+D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\app_shared_libraries\arm64-v8a\libxamarin-app.so
 D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\android\bin\classes.dex
 D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\android\bin\classes2.dex
 D:\Curso C#\Udemy\CursoMaui2023\Todo\obj\Debug\net7.0-android\stamp\_CleanIntermediateIfNeeded.stamp

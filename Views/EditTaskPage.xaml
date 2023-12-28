@@ -9,12 +9,12 @@
     </ContentPage.Resources>
 
     <ScrollView>
-        <Grid>
+        <Grid RowDefinitions="*, 70">
             <BoxView HeightRequest="5" 
             Color="{StaticResource Black}"
             VerticalOptions="Start"/>
 
-            <VerticalStackLayout Padding="15" Spacing="10">
+            <VerticalStackLayout Grid.Row="0" Padding="15" Spacing="10">
 
                 <Button Clicked="CloseModal"
                     Text="X"
@@ -34,7 +34,7 @@
                 <Label x:Name="Label_TaskDescription_Required" Text="O campo é obrigatório!" TextColor="Red" Margin="0,-7,0,5"  IsVisible="false"/>
 
                 <Border StrokeShape="RoundRectangle 10">
-                    <DatePicker x:Name="DatePicker_TaskDate" HorizontalOptions="FillAndExpand" />
+                    <DatePicker x:Name="DatePicker_TaskDate" Margin="10,0,0,0" HorizontalOptions="FillAndExpand" />
                 </Border>
 
                 <StackLayout  Orientation="Horizontal" HeightRequest="31">
@@ -75,11 +75,13 @@
 
             </VerticalStackLayout>
 
-            <Button Clicked="SaveData"
-                Text="Salvar"
-                Margin="15"
-                HorizontalOptions="Center"
-                VerticalOptions="End"/>
+            <Button Grid.Row="1"
+                    Clicked="SaveData"
+                    Text="Salvar"
+                    Margin="15"
+                    ZIndex="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End"/>
         </Grid>
     </ScrollView>
 </ContentPage>

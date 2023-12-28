@@ -1,4 +1,5 @@
 using AppTask.Models;
+using Microsoft.EntityFrameworkCore;
 using Todo.Repositories;
 
 namespace Todo.Views;
@@ -17,7 +18,7 @@ public partial class HomeTaskPage : ContentPage
     public async void LoadData()
     {
         _tasks = await _repository.GetTasks();
-        CollectionViewTasks.ItemsSource = _tasks;
+        CollectionViewTasks.ItemsSource = _tasks.Where(x => x.IsCompleted == false); 
         LabelText.IsVisible = _tasks.Count <= 0;
     }
 
@@ -51,8 +52,14 @@ public partial class HomeTaskPage : ContentPage
         {
             checkBox.IsChecked = !checkBox.IsChecked;
         }
-        task.IsCompleted = checkBox.IsChecked;
-        await _repository.PutTask(task);
+
+        TaskModel existingTask = await _repository.GetTaskById(task.Id);
+        if (existingTask != null)
+        {
+            existingTask.IsCompleted = checkBox.IsChecked;
+            await _repository.PutTask(existingTask);
+            LoadData();
+        }
     }
 
     private async void OnTapPutTask(object sender, TappedEventArgs e)
@@ -67,5 +74,10 @@ public partial class HomeTaskPage : ContentPage
 
         var search = _tasks.Where(x => x.Name.ToLower().Contains(word.ToLower())).ToList();
         CollectionViewTasks.ItemsSource = search;
+    }
+
+    private async void CompletedTask(object sender, EventArgs e)
+    {
+        await Navigation.PushModalAsync(new CompletedTaskPage());
     }
 }

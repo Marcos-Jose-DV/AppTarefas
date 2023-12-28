@@ -34,6 +34,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = Todo.Resources.Styles.Styl
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
+[D:/Curso C\#/Udemy/CursoMaui2023/Todo/Views/CompletedTaskPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Todo.Views.CompletedTaskPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\CompletedTaskPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\CompletedTaskPage.xaml
+
 [D:/Curso C\#/Udemy/CursoMaui2023/Todo/Views/EditTaskPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Todo.Views.EditTaskPage.xaml
