@@ -40,10 +40,18 @@ public partial class EditTaskPage : ContentPage
       
         if(valid)
         {
-            CreatedDate();
             SaveInDatabase();
+            UpdateListHome();
         }
     }
+
+    private void UpdateListHome()
+    {
+        var navPage = (NavigationPage)App.Current.MainPage;
+        var homepage = (HomeTaskPage)navPage.CurrentPage;
+        homepage.LoadData();
+    }
+
     private bool ValidDataFromForm()
     {
         bool validResult = true;
@@ -63,36 +71,29 @@ public partial class EditTaskPage : ContentPage
 
         return validResult;
     }
-
-    private void CreatedDate()
-    {
-        DatePicker_TaskDate.Date = new DateTime(DatePicker_TaskDate.Date.Year, DatePicker_TaskDate.Date.Month, DatePicker_TaskDate.Date.Day, 23, 59, 59);
-    }
+   
     private void SaveInDatabase()
     {
         _task.Name = Entry_TaskName.Text;
         _task.Description = Editor_TaskDescription.Text;
-        _task.PrevisionDate = DatePicker_TaskDate.Date;
+        _task.PrevisionDate = new DateTime(DatePicker_TaskDate.Date.Year, DatePicker_TaskDate.Date.Month, DatePicker_TaskDate.Date.Day, 23, 59, 59);
         _task.Created = DateTime.UtcNow;
         _task.IsCompleted = false;
 
+        _repository.PotsTask(_task);
+
         Close();
     }
-
-   
-
     private async void Close()
     {
         await Navigation.PopModalAsync();
     }
-
     protected override void OnSizeAllocated(double width, double height)
     {
         base.OnSizeAllocated(width, height);
 
         DatePicker_TaskDate.WidthRequest = width - 30;
     }
-
     private void DeleteTask(object sender, TappedEventArgs e)
     {
         var subTask = (SubTaskModel)e.Parameter;

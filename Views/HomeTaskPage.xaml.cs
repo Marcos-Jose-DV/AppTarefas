@@ -13,7 +13,7 @@ public partial class HomeTaskPage : ContentPage
         _repository = new TaskModelRepository();
         LoadData();
     }
-    private async void LoadData()
+    public async void LoadData()
     {
         var tasks = await _repository.GetTasks();
         CollectionViewTasks.ItemsSource = tasks;
