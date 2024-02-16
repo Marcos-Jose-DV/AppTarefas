@@ -7,7 +7,7 @@
 <p>Framework que usei para criar esse app foi Net Maui, O .NET MAUI (Multi-platform App UI) é um framework de código aberto da Microsoft que permite o desenvolvimento de aplicativos multiplataforma para dispositivos móveis, desktop e web, usando uma única base de código em C#. Ele é uma evolução do Xamarin.Forms e foi projetado para simplificar ainda mais o desenvolvimento de aplicativos multiplataforma. </p>
 
 <p>Para armazenamento de dados no projeto, optei pelo LiteDB, uma solução leve e integrada para .NET MAUI. Com ele, é possível persistir dados de forma eficiente em um único arquivo de banco de dados, sem a necessidade de configurações adicionais.</p>
-hammer: Funcionalidades do projeto
+🔨: Funcionalidades do projeto
 
 - **Registro de Despesas e Receitas:**: Permite aos usuários registrar suas despesas e receitas de forma organizada e eficiente. Com um sistema completo de gerenciamento financeiro, os usuários podem adicionar novas transações, visualizar o histórico de transações existentes e atualizar ou excluir entradas conforme necessário.
 
